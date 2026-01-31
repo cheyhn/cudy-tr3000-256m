@@ -16,3 +16,8 @@
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+# 第一步：强制删除package/lean下的luci-theme-argon（-r递归删文件夹，-f强制删无提示）
+rm -rf package/lean/luci-theme-argon
+
+# 第二步：克隆仓库到指定目录package/lean
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
